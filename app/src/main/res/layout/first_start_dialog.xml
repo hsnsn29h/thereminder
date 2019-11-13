@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
-    android:layout_width="256dp"
-    android:layout_margin="32dp"
-    android:layout_gravity="center"
+    android:layout_width="match_parent"
     android:background="@color/grey_900"
-    android:layout_height="450dp">
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="256dp"
+        android:layout_margin="32dp"
+        android:layout_gravity="center"
+        android:layout_height="450dp">
+
     <TextView
         android:layout_width="match_parent"
         android:textColor="@color/grey_white_1000"
@@ -97,3 +102,4 @@
 
 
     </LinearLayout>
+</LinearLayout>

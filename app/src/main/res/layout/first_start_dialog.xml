@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="256dp"
+    android:layout_margin="32dp"
+    android:layout_gravity="center"
+    android:background="@color/grey_900"
+    android:layout_height="450dp">
+    <TextView
+        android:layout_width="match_parent"
+        android:textColor="@color/grey_white_1000"
+        android:gravity="center"
+        android:layout_margin="12dp"
+        android:text="السلام عليكم ورحمة الله وبركاته"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:textColor="@color/grey_white_1000"
+        android:gravity="center"
+        android:layout_margin="4dp"
+        android:text="مرحباً بك في برنامج المذكر"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:textColor="@color/grey_white_1000"
+        android:gravity="center"
+        android:layout_margin="4dp"
+        android:text="يرجى مساعدتنا في اختيار التذكيرات المناسبة لك"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:textColor="@color/grey_white_1000"
+        android:gravity="center"
+        android:layout_margin="4dp"
+        android:text="يرجى اختيار قيمة او اكثر لتعزيزها عن طريق التذكيرات:"
+        android:layout_height="0dp"
+        android:layout_weight="2"/>
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="قيمة الرحمة"
+            android:textColor="@color/amber_200"
+            android:layout_margin="16dp"
+            android:layout_weight="1"
+            android:layout_height="0dp"/>
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="قيمة الاحترام"
+            android:textColor="@color/amber_200"
+            android:layout_margin="16dp"
+            android:layout_weight="1"
+            android:layout_height="0dp"/>
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="قيمة بر الوالدين"
+            android:textColor="@color/amber_200"
+            android:layout_margin="16dp"
+            android:layout_weight="1"
+            android:layout_height="0dp"/>
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="قيمة الصدق"
+            android:textColor="@color/amber_200"
+            android:layout_margin="16dp"
+            android:layout_weight="1"
+            android:layout_height="0dp"/>
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="قيمة الأمانة"
+            android:textColor="@color/amber_200"
+            android:layout_margin="16dp"
+            android:layout_weight="1"
+            android:layout_height="0dp"/>
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="قيمة العدل"
+            android:textColor="@color/amber_200"
+            android:layout_margin="16dp"
+            android:layout_weight="1"
+            android:layout_height="0dp"/>
+
+
+
+    </LinearLayout>

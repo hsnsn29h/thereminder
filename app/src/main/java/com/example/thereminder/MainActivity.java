@@ -3,22 +3,90 @@ package com.example.thereminder;
 import android.app.Dialog;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.EditText;
+import android.widget.ListView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.util.ArrayList;
+
 
 public class MainActivity extends AppCompatActivity {
-
+    ArrayAdapter arrayAdapter;
 
 
     @Override
     protected void onCreate( Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        ArrayList<String> arrayList=new ArrayList<String>();
 
+
+        arrayList.add("gaaaaa");
+        arrayList.add("gaafdsaaa");
+        arrayList.add("123gaaaaa");
+        arrayList.add("543gaaaaa");
+        arrayList.add("gaZSDXFCGaaaa");
+        arrayList.add("gaGFDZSaaaa");
+        arrayList.add("gaaA\2aaa");
+        arrayList.add("gaQAW2Qaaaa");
+        arrayList.add("gaaaaa");
+        arrayList.add("gaafdsaaa");
+        arrayList.add("123gaaaaa");
+        arrayList.add("543gaaaaa");
+        arrayList.add("gaZSDXFCGaaaa");
+        arrayList.add("gaGFDZSaaaa");
+        arrayList.add("gaaA\2aaa");
+        arrayList.add("gaQAW2Qaaaa");
+        arrayList.add("gaaaaa");
+        arrayList.add("gaafdsaaa");
+        arrayList.add("123gaaaaa");
+        arrayList.add("543gaaaaa");
+        arrayList.add("gaZSDXFCGaaaa");
+        arrayList.add("gaGFDZSaaaa");
+        arrayList.add("gaaA\2aaa");
+        arrayList.add("gaQAW2Qaaaa");
+        arrayList.add("gaaaaa");
+        arrayList.add("gaafdsaaa");
+        arrayList.add("123gaaaaa");
+        arrayList.add("543gaaaaa");
+        arrayList.add("gaZSDXFCGaaaa");
+        arrayList.add("gaGFDZSaaaa");
+        arrayList.add("gaaA\2aaa");
+        arrayList.add("gaQAW2Qaaaa");
+
+        arrayAdapter=new ArrayAdapter(this,R.layout.athkar_list_view,arrayList);
+        ListView listView=findViewById(R.id.list);
+        listView.setAdapter(arrayAdapter);
+
+
+
+
+        EditText inputSearchE=findViewById(R.id.inputSearch);
+        inputSearchE.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+                MainActivity.this.arrayAdapter.getFilter().filter(s);
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
 
 
 
@@ -28,7 +96,7 @@ public class MainActivity extends AppCompatActivity {
         boolean firstStart=prefs.getBoolean("firstStart",true);
 
 
-        if(firstStart){ firstStartMethod();}
+        if(!firstStart){ firstStartMethod();}
 
     }
 

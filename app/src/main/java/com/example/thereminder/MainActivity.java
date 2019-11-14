@@ -19,56 +19,38 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
     ArrayAdapter arrayAdapter;
-
+    ArrayAdapter arrayAdapter2;
+    ArrayList<String> arrayList;
+    ArrayList<String> arrayList_search;
+    EditText inputSearchE;
+    ListView listView;
 
     @Override
     protected void onCreate( Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        ArrayList<String> arrayList=new ArrayList<String>();
+       arrayList=new ArrayList<>();
+       arrayList_search=new ArrayList<>();
 
 
-        arrayList.add("gaaaaa");
-        arrayList.add("gaafdsaaa");
-        arrayList.add("123gaaaaa");
-        arrayList.add("543gaaaaa");
-        arrayList.add("gaZSDXFCGaaaa");
-        arrayList.add("gaGFDZSaaaa");
-        arrayList.add("gaaA\2aaa");
-        arrayList.add("gaQAW2Qaaaa");
-        arrayList.add("gaaaaa");
-        arrayList.add("gaafdsaaa");
-        arrayList.add("123gaaaaa");
-        arrayList.add("543gaaaaa");
-        arrayList.add("gaZSDXFCGaaaa");
-        arrayList.add("gaGFDZSaaaa");
-        arrayList.add("gaaA\2aaa");
-        arrayList.add("gaQAW2Qaaaa");
-        arrayList.add("gaaaaa");
-        arrayList.add("gaafdsaaa");
-        arrayList.add("123gaaaaa");
-        arrayList.add("543gaaaaa");
-        arrayList.add("gaZSDXFCGaaaa");
-        arrayList.add("gaGFDZSaaaa");
-        arrayList.add("gaaA\2aaa");
-        arrayList.add("gaQAW2Qaaaa");
-        arrayList.add("gaaaaa");
-        arrayList.add("gaafdsaaa");
-        arrayList.add("123gaaaaa");
-        arrayList.add("543gaaaaa");
-        arrayList.add("gaZSDXFCGaaaa");
-        arrayList.add("gaGFDZSaaaa");
-        arrayList.add("gaaA\2aaa");
-        arrayList.add("gaQAW2Qaaaa");
+        arrayList.add("سبحان الله");
+        arrayList.add("الله اكبر");
+        arrayList.add("الحمد لله");
+        arrayList.add("لا اله الا الله");
+        arrayList.add("محمد رسول الله");
+        arrayList.add("استغفر الله");
+        arrayList.add("لاحول ولا قوة الا بالله");
+
+
 
         arrayAdapter=new ArrayAdapter(this,R.layout.athkar_list_view,arrayList);
-        ListView listView=findViewById(R.id.list);
+        listView=findViewById(R.id.list);
         listView.setAdapter(arrayAdapter);
 
 
 
 
-        EditText inputSearchE=findViewById(R.id.inputSearch);
+         inputSearchE=findViewById(R.id.inputSearch);
         inputSearchE.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -77,8 +59,10 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
+search();
 
-                MainActivity.this.arrayAdapter.getFilter().filter(s);
+
+
 
             }
 
@@ -136,6 +120,26 @@ firstD.show();
 
         editor.putBoolean("firstStart",false);
         editor.apply();
+    }
+    public void search(){
+
+
+        arrayList_search.clear();
+        String searchWord=inputSearchE.getText().toString().trim();
+
+        for(int i=0;i<arrayList.size();i++){
+
+            String item=arrayList.get(i).toString();
+            if(item.contains(searchWord)){
+
+                arrayList_search.add(item);
+
+            }
+        }
+
+        arrayAdapter2=new ArrayAdapter(this,R.layout.athkar_list_view,arrayList_search);
+        listView.setAdapter(arrayAdapter2);
+
     }
 
 

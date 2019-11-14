@@ -5,11 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/grey_900"
 android:padding="16dp"
     tools:context=".MainActivity">
     <EditText
         android:layout_width="match_parent"
         android:id="@+id/inputSearch"
+        android:background="@color/purple_900"
         android:layout_height="wrap_content"/>
 
 

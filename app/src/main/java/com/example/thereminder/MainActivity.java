@@ -12,7 +12,15 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ListView;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.firebase.FirebaseApp;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
@@ -25,13 +33,37 @@ public class MainActivity extends AppCompatActivity {
     EditText inputSearchE;
     ListView listView;
 
+
+
+
+
     @Override
     protected void onCreate( Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        FirebaseApp.initializeApp(this);
+        final FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference Ref = FirebaseDatabase.getInstance().getReference();
+        Ref.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot snapshot) {
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError error) {
+
+            }
+        });
+
        arrayList=new ArrayList<>();
        arrayList_search=new ArrayList<>();
 
+
+        /*
+
+        test
 
         arrayList.add("سبحان الله");
         arrayList.add("الله اكبر");
@@ -40,6 +72,8 @@ public class MainActivity extends AppCompatActivity {
         arrayList.add("محمد رسول الله");
         arrayList.add("استغفر الله");
         arrayList.add("لاحول ولا قوة الا بالله");
+
+         */
 
 
 
@@ -80,7 +114,7 @@ search();
         boolean firstStart=prefs.getBoolean("firstStart",true);
 
 
-        if(!firstStart){ firstStartMethod();}
+        if(firstStart){ firstStartMethod();}
 
     }
 

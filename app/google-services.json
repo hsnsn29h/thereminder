@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "103569249414-adujn9gf588tl0t7fv3kh6vqsbhoi5h1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.thereminder",
+            "certificate_hash": "99952ec641a7639669ab4ccfcb49a82e63a342ce"
+          }
+        },
+        {
           "client_id": "103569249414-38l07vegqnm9rkgjk13maqvn9smerm4k.apps.googleusercontent.com",
           "client_type": 3
         }

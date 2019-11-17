@@ -33,10 +33,6 @@ public class MainActivity extends AppCompatActivity {
     EditText inputSearchE;
     ListView listView;
 
-
-
-
-
     @Override
     protected void onCreate( Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -50,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
     ArrayList<String> arrayList_search;
 
 
+
     private PendingIntent pendingIntent;
     private AlarmManager manager;
     List<CategoryItem> categoryItemArrayList = new ArrayList<>();
@@ -69,7 +70,8 @@ public class MainActivity extends AppCompatActivity {
 
 
         listView = findViewById(R.id.list);
-
+arrayList=new ArrayList<>();
+arrayList_search=new ArrayList<>();
 
         inputSearchE = findViewById(R.id.inputSearch);
         inputSearchE.addTextChangedListener(new TextWatcher() {
@@ -110,6 +112,7 @@ public class MainActivity extends AppCompatActivity {
                 CategoryItem item = new CategoryItem();
                 item.text_ID = obj1.getString("text_ID");
                 item.message = obj1.getString("message");
+                arrayList.add(item.text_ID);
                 db.categoryDao().insert(item);
             }
         } catch (JSONException e) {

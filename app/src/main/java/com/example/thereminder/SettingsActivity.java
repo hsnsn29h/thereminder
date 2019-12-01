@@ -28,12 +28,15 @@ public class SettingsActivity extends AppCompatActivity implements View.OnClickL
     private AlarmManager manager;
 
 
-    private String aboutUs =getResources().getString(R.string.aboutUs);
+    private String aboutUs;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
+
+        aboutUs =getResources().getString(R.string.aboutUs);
+
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setTitle("Settings");

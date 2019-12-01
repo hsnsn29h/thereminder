@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/grey_900"
+    android:background="@drawable/mosque_background"
     android:orientation="vertical"
     android:padding="16dp"
     tools:context=".MainActivity">
@@ -13,8 +13,9 @@
         android:id="@+id/inputSearch"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Search"
-        android:background="@color/purple_900" />
+        android:hint="البحث"
+        android:gravity="center"
+        android:background="@color/grey_white_1000" />
 
 
     <ListView

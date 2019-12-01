@@ -45,9 +45,9 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    ArrayAdapter arrayAdapter2;
+
     ArrayList<String> arrayList;
-    ArrayList<String> arrayList_search;
+    ArrayList<CategoryItem> arrayList_search;
 
 
 
@@ -183,18 +183,18 @@ arrayList_search=new ArrayList<>();
        arrayList_search.clear();
         String searchWord = inputSearchE.getText().toString().trim();
 
-        for (int i = 0; i < arrayList.size(); i++) {
+        for (int i = 0; i < categoryItemArrayList.size(); i++) {
 
-            String item = arrayList.get(i).toString();
+            String item = categoryItemArrayList.get(i).text_ID;
             if (item.contains(searchWord)) {
 
-               arrayList_search.add(item);
+               arrayList_search.add(categoryItemArrayList.get(i));
 
            }
        }
 
-        arrayAdapter2 = new ArrayAdapter(this, R.layout.athkar_list_view, arrayList_search);
-        listView.setAdapter(arrayAdapter2);
+        CategoryAdapter2 adapter2 = new CategoryAdapter2(MainActivity.this);
+        listView.setAdapter(adapter2);
 
 
 
@@ -259,6 +259,57 @@ arrayList_search=new ArrayList<>();
                 @Override
                 public void onClick(View view) {
                     startActivity(new Intent(MainActivity.this, CategoryDetailActivity.class).putExtra("category", categoryItemArrayList.get(i)));
+                }
+            });
+            return convertView;
+        }
+
+        public class ViewHolder {
+            TextView txtmessage;
+        }
+    }
+    public class CategoryAdapter2 extends BaseAdapter {
+        ViewHolder viewHolder;
+        Context _c;
+        LayoutInflater inflater;
+
+        public CategoryAdapter2(Context context) {
+            _c = context;
+            inflater = LayoutInflater.from(context);
+        }
+
+        @Override
+        public int getCount() {
+            return arrayList_search.size();
+        }
+
+        @Override
+        public Object getItem(int i) {
+            return arrayList_search.get(i);
+        }
+
+        @Override
+        public long getItemId(int i) {
+            return i;
+        }
+
+        @Override
+        public View getView(final int i, View convertView, ViewGroup viewGroup) {
+            if (convertView == null) {
+                convertView = inflater.inflate(R.layout.athkar_list_view, null);
+                viewHolder = new ViewHolder();
+                viewHolder.txtmessage = (TextView) convertView.findViewById(R.id.text1);
+                convertView.setTag(viewHolder);
+            } else {
+                viewHolder = (ViewHolder) convertView.getTag();
+            }
+
+
+            viewHolder.txtmessage.setText(arrayList_search.get(i).text_ID);
+            convertView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    startActivity(new Intent(MainActivity.this, CategoryDetailActivity.class).putExtra("category", arrayList_search.get(i)));
                 }
             });
             return convertView;

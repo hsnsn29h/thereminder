@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:background="@color/grey_900"
+    android:background="@drawable/morning"
     android:layout_height="match_parent">
     <LinearLayout
         android:orientation="vertical"
@@ -13,7 +13,7 @@
 
     <TextView
         android:layout_width="match_parent"
-        android:textColor="@color/grey_white_1000"
+        android:textColor="@color/grey_black_1000"
         android:gravity="center"
         android:layout_margin="12dp"
         android:text="السلام عليكم ورحمة الله وبركاته"
@@ -21,7 +21,7 @@
         android:layout_weight="1"/>
     <TextView
         android:layout_width="match_parent"
-        android:textColor="@color/grey_white_1000"
+        android:textColor="@color/grey_black_1000"
         android:gravity="center"
         android:layout_margin="4dp"
         android:text="مرحباً بك في برنامج المذكر"
@@ -29,7 +29,7 @@
         android:layout_weight="1"/>
     <TextView
         android:layout_width="match_parent"
-        android:textColor="@color/grey_white_1000"
+        android:textColor="@color/grey_black_1000"
         android:gravity="center"
         android:layout_margin="4dp"
         android:text="يرجى مساعدتنا في اختيار التذكيرات المناسبة لك"
@@ -37,7 +37,7 @@
         android:layout_weight="1"/>
     <TextView
         android:layout_width="match_parent"
-        android:textColor="@color/grey_white_1000"
+        android:textColor="@color/grey_black_1000"
         android:gravity="center"
         android:layout_margin="4dp"
         android:text="يرجى اختيار قيمة او اكثر لتعزيزها عن طريق التذكيرات:"
@@ -50,7 +50,7 @@
             android:gravity="center"
             android:id="@+id/mercy"
             android:text="قيمة الرحمة"
-            android:textColor="@color/amber_200"
+            android:textColor="@color/blue_grey_800"
             android:layout_margin="16dp"
             android:layout_weight="1"
             android:layout_height="0dp"/>
@@ -60,7 +60,7 @@
             android:gravity="center"
             android:text="قيمة الاحترام"
             android:id="@+id/respect"
-            android:textColor="@color/amber_200"
+            android:textColor="@color/blue_grey_800"
             android:layout_margin="16dp"
             android:layout_weight="1"
             android:layout_height="0dp"/>
@@ -69,7 +69,7 @@
             android:layout_gravity="center"
             android:gravity="center"
             android:text="قيمة بر الوالدين"
-            android:textColor="@color/amber_200"
+            android:textColor="@color/blue_grey_800"
             android:layout_margin="16dp"
             android:layout_weight="1"
             android:id="@+id/ROP"
@@ -80,7 +80,7 @@
             android:gravity="center"
             android:text="قيمة الصدق"
             android:id="@+id/honesty"
-            android:textColor="@color/amber_200"
+            android:textColor="@color/blue_grey_800"
             android:layout_margin="16dp"
             android:layout_weight="1"
             android:layout_height="0dp"/>
@@ -89,7 +89,7 @@
             android:layout_gravity="center"
             android:gravity="center"
             android:text="قيمة الأمانة"
-            android:textColor="@color/amber_200"
+            android:textColor="@color/blue_grey_800"
             android:layout_margin="16dp"
             android:layout_weight="1"
             android:id="@+id/trust"
@@ -99,7 +99,7 @@
             android:layout_gravity="center"
             android:gravity="center"
             android:text="قيمة العدل"
-            android:textColor="@color/amber_200"
+            android:textColor="@color/blue_grey_800"
             android:layout_margin="16dp"
             android:layout_weight="1"
             android:id="@+id/justice"
@@ -111,7 +111,7 @@
             android:layout_weight="2.3"
             android:layout_height="0dp"
             android:layout_margin="16dp"
-            android:background="@color/blue_300"
+            android:textColor="@color/blue_grey_900"
             android:text="إنهاء"/>
 
 

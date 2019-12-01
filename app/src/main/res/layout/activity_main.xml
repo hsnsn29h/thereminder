@@ -12,10 +12,10 @@
     <EditText
         android:id="@+id/inputSearch"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="32dp"
         android:hint="البحث"
         android:gravity="center"
-        android:background="@color/grey_white_1000" />
+        android:background="#192CAD" />
 
 
     <ListView

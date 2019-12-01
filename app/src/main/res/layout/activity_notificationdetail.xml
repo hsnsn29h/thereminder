@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/grey_900"
+    android:background="@drawable/night"
     android:orientation="vertical">
 
     <TextView
@@ -22,9 +22,10 @@
         android:layout_height="match_parent"
         android:layout_margin="20dp"
         android:layout_marginTop="20dp"
-        android:gravity="center"
+        android:gravity="top"
+        android:textStyle="bold"
         android:minHeight="?android:attr/listPreferredItemHeightSmall"
         android:textAppearance="?android:attr/textAppearanceListItemSmall"
-        android:textColor="@color/grey_white_1000" />
+        android:textColor="@color/grey_black_1000" />
 
 </LinearLayout>

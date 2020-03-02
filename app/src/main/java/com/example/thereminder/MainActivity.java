@@ -3,12 +3,10 @@ package com.example.thereminder;
 import android.app.AlarmManager;
 import android.app.Dialog;
 import android.app.PendingIntent;
-import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.provider.Settings;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.LayoutInflater;
@@ -16,18 +14,14 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.ContextCompat;
 
 import com.example.thereminder.database.AppDatabase;
 import com.example.thereminder.models.CategoryItem;
@@ -48,15 +42,12 @@ public class MainActivity extends AppCompatActivity {
 
     ArrayList<String> arrayList;
     ArrayList<CategoryItem> arrayList_search;
-
-
-
-    private PendingIntent pendingIntent;
-    private AlarmManager manager;
     List<CategoryItem> categoryItemArrayList = new ArrayList<>();
     AppDatabase db;
     EditText inputSearchE;
     ListView listView;
+    private PendingIntent pendingIntent;
+    private AlarmManager manager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,8 +61,8 @@ public class MainActivity extends AppCompatActivity {
 
 
         listView = findViewById(R.id.list);
-arrayList=new ArrayList<>();
-arrayList_search=new ArrayList<>();
+        arrayList = new ArrayList<>();
+        arrayList_search = new ArrayList<>();
 
         inputSearchE = findViewById(R.id.inputSearch);
         inputSearchE.addTextChangedListener(new TextWatcher() {
@@ -146,19 +137,10 @@ arrayList_search=new ArrayList<>();
             public void onClick(View v) {
 
 
-//                AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
-//                Intent myIntent = new Intent(getApplicationContext(), BroadcastReceiver.class);
-//                PendingIntent pendingIntent = PendingIntent.getBroadcast(
-//                        getApplicationContext(), 0, myIntent,
-//                        PendingIntent.FLAG_UPDATE_CURRENT);
-//
-//                alarmManager.cancel(pendingIntent);
-
-                ///////////
                 manager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
 
                 manager.setRepeating(AlarmManager.RTC_WAKEUP, System.currentTimeMillis(), AppConstants.pushNotificationInterval, pendingIntent);
-//                Toast.makeText(MainActivity.this, "Alarm Set", Toast.LENGTH_SHORT).show();
+
 
                 editor.putBoolean("mercy", mercyCB.isChecked());
                 editor.putBoolean("respect", respectCB.isChecked());
@@ -180,7 +162,7 @@ arrayList_search=new ArrayList<>();
     public void search() {
 
 
-       arrayList_search.clear();
+        arrayList_search.clear();
         String searchWord = inputSearchE.getText().toString().trim();
 
         for (int i = 0; i < categoryItemArrayList.size(); i++) {
@@ -188,14 +170,13 @@ arrayList_search=new ArrayList<>();
             String item = categoryItemArrayList.get(i).text_ID;
             if (item.contains(searchWord)) {
 
-               arrayList_search.add(categoryItemArrayList.get(i));
+                arrayList_search.add(categoryItemArrayList.get(i));
 
-           }
-       }
+            }
+        }
 
         CategoryAdapter2 adapter2 = new CategoryAdapter2(MainActivity.this);
         listView.setAdapter(adapter2);
-
 
 
     }
@@ -216,6 +197,20 @@ arrayList_search=new ArrayList<>();
         return json;
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        if (id == R.id.settings) {
+            startActivity(new Intent(MainActivity.this, SettingsActivity.class));
+        }
+        return super.onOptionsItemSelected(item);
+    }
 
     public class CategoryAdapter extends BaseAdapter {
         ViewHolder viewHolder;
@@ -268,6 +263,7 @@ arrayList_search=new ArrayList<>();
             TextView txtmessage;
         }
     }
+
     public class CategoryAdapter2 extends BaseAdapter {
         ViewHolder viewHolder;
         Context _c;
@@ -318,21 +314,6 @@ arrayList_search=new ArrayList<>();
         public class ViewHolder {
             TextView txtmessage;
         }
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-        if (id == R.id.settings) {
-            startActivity(new Intent(MainActivity.this, SettingsActivity.class));
-        }
-        return super.onOptionsItemSelected(item);
     }
 
 }
